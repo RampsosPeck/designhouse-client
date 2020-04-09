@@ -1,10 +1,10 @@
 <template>
   <div>
-    <SiteNavigation></SiteNavigation>
-    <div class="wrapper">
-      <nuxt />
-    </div>
-    <SiteFooter></SiteFooter>
+      <SiteNavigation></SiteNavigation>
+      <div class="wrapper">
+        <nuxt />
+      </div>
+      <SiteFooter></SiteFooter>
   </div>
 </template>
 

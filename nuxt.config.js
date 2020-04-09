@@ -34,20 +34,38 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/vform'
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/router'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
     'bootstrap-vue/nuxt',
+    '@nuxtjs/auth',
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
   ],
+
+  auth: {
+  strategies: {
+    local: {
+      endpoints: {
+        login: { url: '/login', method: 'post', propertyName: 'token' },
+        logout: { url: '/logout', method: 'post' },
+        user: { url: '/me', method: 'get', propertyName: 'data' }
+      },
+      // tokenRequired: true,
+      // tokenType: 'bearer'
+      // autoFetchUser: true
+    }
+  }
+},
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
