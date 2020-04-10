@@ -1,6 +1,13 @@
-
+require('dotenv').config();
 export default {
   mode: 'universal',
+
+  /*AUMENTANDO MIO JORGE PERALTA*/
+  server: {
+    //port: 8000, // default: 3000
+    host: '127.0.0.28' // default: localhost
+  },
+  /*HASTA AQUI AUMENTE*/
   /*
   ** Headers of the page
   */
