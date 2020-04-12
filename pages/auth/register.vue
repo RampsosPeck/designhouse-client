@@ -75,7 +75,7 @@
                     </button>
                 </div>
                 <p class="font-14 fw-400 text-center mt-4">
-                    Ya tienes una cuenta?
+                    ¿Ya tienes una cuenta?
                     <nuxt-link class="color-blue" :to="{name: 'login'}"> INGRESAR</nuxt-link>
                 </p>
             </form>

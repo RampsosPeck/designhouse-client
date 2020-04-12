@@ -2,17 +2,20 @@
 	<section class="authentication">
         <div class="auth-body">
             <h1 class="text-uppercase fw-500 mb-4 text-center font-22">
-                INICIA SISIÓN
+                RESTABLECER LA CONTRASEÑA
             </h1>
             <form class="auth-form" @submit.prevent="submit">
-                <alert-error v-if="form.errors.has('message')" :form="form">
-                    {{ form.errors.get('message') }} <br>
-                    <nuxt-link :to="{ name:'verification.resend'}"> Reenviar email de verificación.</nuxt-link>
-                </alert-error>
+				<alert-success :form="form">
+					{{ status }}
+					<p>
+						<nuxt-link to="/login"> Proceda a iniciar sesión </nuxt-link>
+					</p>
+				</alert-success>
                 <div class="form-group">
                     <input
                         type="text"
                         name="email"
+                        readonly
                         v-model="form.email"
                         class="form-control form-control-lg font-14 fw-300"
                         :class="{ 'is-invalid': form.errors.has('email') }"
@@ -27,12 +30,18 @@
                         v-model="form.password"
                         class="form-control form-control-lg font-14 fw-300"
                         :class="{ 'is-invalid': form.errors.has('password') }"
-                        placeholder="Ingrese su contraseña"
+                        placeholder="Ingrese su nueva contraseña"
                     />
                     <has-error :form="form" field="password"></has-error>
                 </div>
-                <div class="mt-4 mb-4 clearfix">
-                    <nuxt-link class="forgot-pass color-blue font-14 fw-400" to="/password/email"> ¿Se te olvidó tu contraseña? </nuxt-link>
+                <div class="form-group">
+                    <input
+                        type="password"
+                        name="password_confirmation"
+                        v-model="form.password_confirmation"
+                        class="form-control form-control-lg font-14 fw-300"
+                        placeholder="Repita su nueva contraseña"
+                    />
                 </div>
                 <div class="text-right">
                     <button type="submit"
@@ -41,13 +50,9 @@
                         <span v-if="form.busy">
                             <i class="fas fa-spinner fa-spin"></i>
                         </span>
-                        INGRESAR
+                        restablecer la contraseña
                     </button>
                 </div>
-                <p class="font-14 fw-400 text-center mt-4">
-                    ¿Aún no tienes una cuenta?
-                    <nuxt-link class="color-blue" :to="{ name: 'register' }"> CREA UNA CUENTA </nuxt-link>
-                </p>
             </form>
         </div>
     </section>
@@ -58,27 +63,32 @@
     export default {
         data(){
             return {
+            	status: '',
                 form: this.$vform({
                     email: '',
-                    password: ''
+                    password: '',
+                    password_confirmation:'',
+                    token: ''
                 })
             }
         },
         methods: {
             submit(){
-                this.$auth.loginWith('local', {
-                    data: this.form
-                })
-                .then(res => {
-                    console.log(res);
-                }).catch(e => {
-                    this.form.errors.set(e.response.data.errors);
-                });
+            	this.form.post('/password/reset')
+            		.then(res => {
+            			this.status = res.data.status;
+            			this.form.reset();
+            		}).catch(e=> {
+            			console.log(e);
+            		})
             }
+        },
+        created(){
+        	this.form.email = this.$route.query.email;
+        	this.form.token = this.$route.params.token;
         }
     };
 
 </script>
-
 
 
