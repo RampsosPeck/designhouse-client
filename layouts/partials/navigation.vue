@@ -49,8 +49,8 @@
                     <div
                         class="upload-shot white-path font-14 fw-500 text-uppercase mr-auto"
                     >
-                        <a href="#" class="primary-bg-color text-white">
-                            <i class="fas fa-cloud-upload-alt"></i> Upload
+                        <a href="/upload" class="primary-bg-color text-white">
+                            <i class="fas fa-cloud-upload-alt"></i> Subir
                         </a>
                     </div>
                 </div>
