@@ -42,7 +42,8 @@ export default {
   */
   plugins: [
     '~plugins/vform',
-    '~components/_global'
+    '~components/_global',
+    { src: '~/plugins/gmaps', ssr:false }
   ],
   /*
   ** Nuxt.js dev-modules
