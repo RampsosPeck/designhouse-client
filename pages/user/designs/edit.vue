@@ -12,7 +12,7 @@
         	<div class="row">
         		<div class="col-md-6">
         			<div class="card">
-        				<div class="card-body p-1">
+        				<div class="card-body p-1" v-if="design.images">
         					<img :src="design.images.large" class="w-100 mb-4" />
         				</div>
         			</div>
@@ -89,6 +89,8 @@
 									</label>
 								</div>
 								<div class="text-right">
+									<nuxt-link :to="{ name: 'settings.designs'}"> Cancelar
+									</nuxt-link>
 									<base-button :loading="form.busy">
 										Actualizar de diseño
 									</base-button>
@@ -104,6 +106,7 @@
 <script>
 	import BetterInputTag from 'better-vue-input-tag'
 	export default {
+		middleware: ['auth'],
 		components: {
 			BetterInputTag
 		},
@@ -121,13 +124,15 @@
 		},
 		async asyncData({ $axios, params, error, redirect }){
 			try {
-				const design = await $axios.$get(`/designs/${params.id}`);
+				const design = await $axios.$get(`/designs/${params.id}/byUser`);
 				const teams = await $axios.$get(`/users/teams`);
 				//console.log(design);
 				return { design: design.data, teams: teams.data }
 			} catch(err) {
 				if(err.response.status === 404){
 					error({statusCode: 404, message: "Diseño no encontrado."});
+				} else if (err.response.status === 401) {
+					redirect('/login');
 				}else{
 					error({statusCode: 500, message: "error de servidor interno."});
 				}
@@ -135,7 +140,12 @@
 		},
 		methods: {
 			submit(){
-
+				this.form.put(`/designs/${this.$route.params.id}`)
+					.then(res => {
+						setTimeout(() => {
+							this.$router.push({name: 'settings.designs'});
+						}, 1000);
+					}).catch(err => console.log(err.response));
 			}
 		},
 		mounted(){

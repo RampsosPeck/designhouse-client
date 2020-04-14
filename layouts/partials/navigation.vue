@@ -107,7 +107,15 @@
                                         >Your Account</span
                                     >
                                 </div>
-                                <a
+                                <nuxt-link
+                                    to="/settings/dashboard"
+                                    class="dropdown-item mt-28"
+                                    title="Profile"
+                                >
+                                    <i class="fa fa-tachometer-alt"></i>
+                                    Dashboard
+                                </nuxt-link>
+                                 <a
                                     class="dropdown-item mt-28"
                                     href="#"
                                     title="Profile"
