@@ -60,7 +60,18 @@ const routes = [
 				component: page('user/settings/designs.vue')
 			}
 		]
+	},
+	{
+		path: '/designs',
+		name:'designs.search',
+		component: page('designs/search.vue')
+	},
+	{
+		path: '/design/:slug',
+		name:'designs.show',
+		component: page('designs/show.vue')
 	}
+
 ];
 
 export function createRouter(){
