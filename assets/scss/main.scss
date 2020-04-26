@@ -32,3 +32,34 @@
     background-size: cover;
     background-position: center;
 }
+
+
+.color-bordo {
+    border: #2e0e14 1px solid;
+    background-color: #733540 !important;
+}
+.color-bordo-out {
+    border: #2e0e14 2px solid;
+    background-color: #d1b8ba !important;
+}
+.color-border {
+    border: #2e0e14 2px solid;
+}
+
+.titulo-success {
+    color: #2e0e14;
+    background-color: #f5ab60;
+    position: relative;
+    padding: 1.50rem 1.25rem;
+    margin-bottom: 1rem;
+    border: #2e0e14 2px solid;
+    border-radius: 0.25rem;
+}
+
+
+.router-link-exact-active {
+    border: #2e0e14 1px solid !important;
+    background-color: #efb810 !important;
+}
+
+

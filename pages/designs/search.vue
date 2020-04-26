@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<section class="filters-block shadow-sm">
+		<section class="filters-block shadow-sm" >
             <div class="container">
                 <form @submit.prevent="search">
                     <div class="filters d-flex justify-content-between align-items-center">

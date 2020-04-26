@@ -1,9 +1,9 @@
 <template>
 	<div class="setting-block">
-		<div class="setting-title font-16 fw-500 text-center">DISEÑOS</div>
-		<div class="setting-body white-bg-color" >
+		<div class="setting-title font-16 fw-500 text-center color-bordo-out">DISEÑOS</div>
+		<div class="setting-body white-bg-color color-border" v-if="designs.length" >
 			<table class="table table-striped">
-				<thead>
+				<thead class="titulo-success">
 					<tr>
 						<td>#</td>
 						<td>Título</td>
@@ -21,11 +21,14 @@
 						<td>{{ design.title }}</td>
 						<td>{{ design.is_live ? 'Publicado' : 'Draft' }}</td>
 						<td>
-							<nuxt-link :to="{name:'designs.edit', params: { id: design.id }}"> Editar</nuxt-link>
+							<nuxt-link :to="{name:'designs.edit', params: { id: design.id }}" class="btn btn-block btn-sm btn-warning"> Editar</nuxt-link>
 						</td>
 					</tr>
 				</tbody>
 			</table>
+		</div>
+		<div v-else class="justify-content-center">
+			<b-alert variant="success" class="text-center titulo-success " show>Aún no tiene diseños</b-alert>
 		</div>
 	</div>
 </template>

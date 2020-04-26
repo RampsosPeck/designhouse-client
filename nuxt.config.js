@@ -43,7 +43,8 @@ export default {
   plugins: [
     '~plugins/vform',
     '~components/_global',
-    { src: '~/plugins/gmaps', ssr:false }
+    { src: '~/plugins/gmaps', ssr:false },
+    { src: '~/plugins/vuecorusel', ssr:false }
   ],
   /*
   ** Nuxt.js dev-modules

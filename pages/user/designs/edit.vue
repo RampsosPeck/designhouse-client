@@ -13,7 +13,7 @@
         		<div class="col-md-6">
         			<div class="card">
         				<div class="card-body p-1" v-if="design.images">
-        					<img :src="design.images.large" class="w-100 mb-4" />
+        					<img :src="design.images.large" class="w-100" />
         				</div>
         			</div>
         		</div>
@@ -89,7 +89,7 @@
 									</label>
 								</div>
 								<div class="text-right">
-									<nuxt-link :to="{ name: 'settings.designs'}"> Cancelar
+									<nuxt-link class="btn color-bordo-out" :to="{ name: 'settings.designs'}"> Cancelar
 									</nuxt-link>
 									<base-button :loading="form.busy">
 										Actualizar de diseño

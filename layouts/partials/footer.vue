@@ -7,22 +7,20 @@
                         <div class="footer-links font-12 fw-300;">
                             <a href="#">Privacy</a>
                             <span>/</span>
-                            <a href="#">Terms and Conditions</a>
+                            <a href="#">Términos y Condiciones</a>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <p class="font-14 fw-300">
-                            © 2018 Project. All rights reserved.
+                            © {{ fecha }} Todos los derechos reservados.
                         </p>
                     </div>
                     <div class="col-md-4 text-right">
                         <div class="footer-social">
-                            <a href="#" title="Facebook">
-                                <i class="fab fa-facebook-square"></i>
-                            </a>
-                            <a href="#" title="twitter">
-                                <i class="fab fa-twitter-square"></i>
-                            </a>
+                            <p class="font-14 fw-300">
+                                <i class="fas fa-code" style="color: #efb810;"></i>
+                                Ing. Jorge Peralta
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -33,8 +31,12 @@
 
 <script>
     export default {
-
-    }
+        data(){
+            return {
+                fecha: (new Date()).getFullYear()
+            }
+        }
+    };
 </script>
 
 

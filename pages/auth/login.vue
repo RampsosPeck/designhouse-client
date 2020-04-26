@@ -1,6 +1,6 @@
 <template>
 	<section class="authentication">
-        <div class="auth-body">
+        <div class="auth-body color-border">
             <h1 class="text-uppercase fw-500 mb-4 text-center font-22">
                 INICIA SISIÓN
             </h1>

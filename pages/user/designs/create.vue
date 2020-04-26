@@ -13,7 +13,7 @@
 	            <div
 	                class="row justify-content-center align-items-center text-center"
 	            >
-	                <div class="col-md-6 alert alert-success">
+	                <div class="col-md-6 alert titulo-success">
 						<div class="card bg-white shadow-sm">
 							<div class="d-flex flex-column justify-content-center p-1">
 								<div class="alert alert-danger" v-if="error">

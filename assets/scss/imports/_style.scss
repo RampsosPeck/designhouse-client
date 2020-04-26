@@ -223,8 +223,11 @@ header .navbar-nav {
     text-align: center;
     border-radius: 2px;
 }
-.before-login li:first-child a {
-    background-color: #38a9ff;
+/*.before-login li:first-child a {
+    background-color: #efb810;
+}*/
+.router-link-exact-active .router-link-active {
+    background-color: #efb810;
 }
 .before-login li:last-child a {
     width: auto;
@@ -294,7 +297,7 @@ header .navbar-nav {
     border-bottom: 1px solid #e6ecf5;
     padding: 5px 15px 10px;
     font-size: 0;
-    min-width: 380px;
+    min-width: 100px;
     position: fixed;
     z-index: 9;
 }
@@ -387,7 +390,7 @@ header .navbar-nav {
 }
 .hero {
     position: relative;
-    padding: 50px 15px;
+    padding: 30px 15px;
     overflow: hidden;
 }
 

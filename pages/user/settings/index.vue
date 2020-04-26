@@ -3,8 +3,8 @@
         <div class="container">
             <div class="row">
                 <!-- LEFT -->
-                <div class="col-sm-3" id="myScrollspy">
-                    <div class="list-group">
+                <div class="col-sm-3 " id="myScrollspy">
+                    <div class="list-group titulo-success ">
                         <nuxt-link
                         	v-for="link in links" :key="link.route"
                         	:to="{ name: link.route}"

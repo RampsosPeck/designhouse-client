@@ -6,6 +6,7 @@
                     <div class="row">
                         <!-- LEFT -->
                         <div class="col-md-8">
+
                             <!-- Single Image -->
                             <div class="post-detail">
                                 <div class="single-img">
@@ -14,6 +15,17 @@
                             </div>
                             <!-- End Single Image -->
                             <!-- Design Detail Text -->
+                            <ul class="details-side-meta font-14 fw-400 text-center" >
+                                <li class="d-table w-100">
+                                    <div
+                                        class="stats-txt d-table-cell w-100"
+                                    >
+                                        <a href="#" class="fw-500 text-uppercase">
+                                            {{ design.title}}
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
                             <div
                                 class="desing-text font-16 fw-400 pb-3 pt-2"
                             >
